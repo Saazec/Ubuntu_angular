@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="angular.min.js"></script>
+    <script src="angular-route.min.js"></script>
+    <script src="app.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div ng-controller="myController">
+        {{ message }}
+        {{ time }}
+        <input type="range" max="5" ng-model="limitfilter" placeholder="How many you wnt">
+        <table style="border: 1px dashed red;">
+            <tr ng-repeat="x in users">
+                <td>{{ x.name | myFilter:limitfilter }}</td>
+                <td>{{ x.gender | myFilter }}</td>
+                <td>{{ x.salary | myFilter }}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

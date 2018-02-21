@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="angular.min.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <style type="text/css">
+        input.ng-touched.ng-invalid {
+            border: 1px solid red;
+        };
+        input.ng-touched.ng-valid {
+            border: 1px soild green;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <form action="#" method="get" name="contactform" novalidate class="form-group">
+                    <input type="text" name="name" id="name" ng-model="contact.name" ng-required="true" class="form-control" placeholder="Name"
+                    />
+                    <small ng-show="contactform.name.$touched && contactform.name.$invalid">
+                        <p style="display: block; color:red;">Please add a valid name</p>
+                    </small>
+                    <small ng-show="contactform.name.$touched && contactform.name.$valid">
+                            <p style="display: block; color: green;">Looks okay</p>
+                        </small>
+                    <br>
+                    <input type="email" name="email" id="email" class="form-control" ng-model="contact.email" ng-required="true" placeholder="email ID"
+                    />
+                    <small ng-show="contactform.email.$touched && contactform.email.$invalid">
+                            <p style="display: block; color:red;">Don't you know how an email id looks like ?</p>
+                        </small>
+                        <small ng-show="contactform.email.$touched && contactform.email.$valid">
+                                <p style="display: block; color: green;">Yayy !!! there you go </p>
+                            </small>
+
+
+                    <br>
+                    <textarea name="description" id="description" cols="30" rows="5" class="form-control" ng-required="true" ng-model="contact.desc"
+                        placeholder="description"></textarea>
+                    <hr class="light">
+                    <button class="btn btn-outline-success btn-lg" type="submit">
+                        SUBMIT
+                    </button>
+                    &nbsp;&nbsp;&nbsp;
+                    <button class="btn btn-outline-dark btn-lg" type="reset">
+                        CLEAR
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <style type="text/css">
+    body{
+        width:800px;
+        margin: 0px auto;
+    };
+    form{
+        width: 250px;
+        margin: 0px auto;
+    };
+    </style>
+    <title>Hotel Booking</title>
+</head>
+<body>
+    <section>
+        <form class="form">
+            <h1 class="h1">Please Enter Your Details</h1><hr class="light">
+            <input type="text" name="name" id="name" required placeholder="Full Name" class="form-control" /><br>
+            <input type="email" name="email" id="email" placeholder="abc@xyz.com" class="form-control" required><br>
+            <input type="tel" name="mobile" id="mobile" required placeholder="Mobile Number"><br>
+            <input type="radio" name="gender" id="male">Male
+            <input type="radio" name="gender" id="female" class="form-control">Female <br>
+            <label for="checkin">Checkin Date</label>
+            <input type="date" name="checkin" id="checkin" class="form-control">
+            <label for="checkout">Checkout Date</label>
+            <input type="date" name="checkout" id="checkout" class="form-control"><br>
+            <label for="adults">Adults
+            <input type="number" name="adults" id="adults"></label>
+            <label for="children">Children
+            <input type="number" name="children" id="children"></label><br>
+            <label for="room">Room Type
+                <div class="btn-group">
+                    <button type="button" onclick="ac()" class="btn btn-primary" value="350">AC</button>
+                    <button type="button" onclick="nonac()" class="btn btn-warning" value="250">Non AC</button>
+                </div>
+            </label>
+            <label for="price">Price
+                <input type="text" name="price" id="price" readonly>
+            </label>
+            <hr class="light">
+            <button type="submit" onclick="display()" class="btn btn-outline-success btn-lg">Book</button>
+            <button type="reset" class="btn btn-outline-dark btn-lg">Reset</button>
+        </form>
+    </section>
+    <script type="text/javascript">
+    function display(){
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("mobile").value;
+        var checkin = document.getElementById("checkin").value;
+        var checkout = document.getElementById("checkout").value;
+        var adults = document.getElementById("adults").value;
+        var children = document.getElementById("children").value;
+        var price = document.getElementById("price").value;
+
+        window.alert(name + email + phone + checkin + checkout + adults + children + price);
+    };
+    function ac(){
+        document.getElementById("price").value = 350;
+    };
+    function nonac(){
+        document.getElementById("price").value = 250;
+    }
+    </script>
+</body>
+</html>

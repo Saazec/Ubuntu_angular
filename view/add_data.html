@@ -1,0 +1,17 @@
+<div ng-controller="cont2">
+<form ng-submit="addUser()">
+    <input type="text" name="" ng-model="newName" id=""><br>
+    <input type="text" name="" ng-model="newAge" id=""><br>
+    <input type="text" name="" ng-model="newGender" id=""><br>
+    <button type="submit" ng-submit="addUser">Add</button> 
+</form>
+
+<table border="1">
+    <tr ng-repeat="u in users | myFilter">
+        <td> {{ u.name }}</td>
+        <td>{{ u.age }}</td>
+        <td>{{ u.gender }}</td>
+    </tr>
+
+</table>
+</div>
